@@ -16,7 +16,7 @@
      limitations under the License.
 -->
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
-        	xmlns:settings="http://schemas.android.com/apk/res/org.nameless.device.OnePlusSettings"
+        	xmlns:settings="http://schemas.android.com/apk/res/com.aosp.device.OnePlusSettings"
         	android:title="@string/ambient_display_title">
 
     <com.android.settingslib.widget.TopIntroPreference
@@ -28,7 +28,7 @@
         android:key="doze_enable"
         android:title="@string/ambient_enable" />
 
-    <org.nameless.device.OnePlusSettings.Preferences.SwitchPreference
+    <com.aosp.device.OnePlusSettings.Preferences.SwitchPreference
         android:key="always_on_display"
         android:disableDependentsState="true"
         android:title="@string/ambient_display_always_on_title"
@@ -54,7 +54,7 @@
         android:key="proximity_sensor"
         android:title="@string/proximity_sensor_title">
 
-        <org.nameless.device.OnePlusSettings.Preferences.SwitchPreference
+        <com.aosp.device.OnePlusSettings.Preferences.SwitchPreference
             android:key="gesture_pocket"
             android:defaultValue="false"
             android:icon="@drawable/ic_pocket"

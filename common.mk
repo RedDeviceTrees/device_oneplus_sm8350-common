@@ -30,6 +30,7 @@ PRODUCT_PACKAGES += \
 
 # Alert slider
 PRODUCT_PACKAGES += \
+    KeyHandler \
     tri-state-key-calibrate
 
 # APEX
@@ -46,7 +47,6 @@ PRODUCT_PACKAGES += \
     android.hardware.audio.service \
     android.hardware.bluetooth.audio@2.1-impl \
     android.hardware.soundtrigger@2.3-impl \
-    audio.a2dp.default \
     audio.bluetooth.default \
     audio.primary.lahaina \
     audio.r_submix.default \
@@ -122,10 +122,6 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.camera.full.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.full.xml \
     frameworks/native/data/etc/android.hardware.camera.raw.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.raw.xml
 
-# Charge control
-PRODUCT_PACKAGES += \
-    vendor.lineage.chgctrl@1.0-service.oneplus_lahaina
-
 # Dalvik
 $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 
@@ -158,6 +154,10 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.touchscreen.multitouch.jazzhand.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.touchscreen.multitouch.jazzhand.xml
+
+# Doze
+PRODUCT_PACKAGES += \
+    OplusDoze
 
 # DRM
 PRODUCT_PACKAGES += \
@@ -282,10 +282,6 @@ PRODUCT_PACKAGES += \
     com.android.nfc_extras \
     nqnfcinfo \
     vendor.nxp.hardware.nfc@2.0-service \
-    com.gsma.services.nfc \
-    QuickAccessWallet \
-    NfcNci \
-    SecureElement \
     Tag
 
 PRODUCT_COPY_FILES += \
@@ -312,7 +308,7 @@ PRODUCT_PACKAGES += \
 $(call inherit-product, hardware/oplus/overlay/qssi/qssi.mk)
 
 DEVICE_PACKAGE_OVERLAYS += \
-    $(LOCAL_PATH)/overlay-stag
+    $(LOCAL_PATH)/overlay-lineage
 
 PRODUCT_ENFORCE_RRO_TARGETS := *
 PRODUCT_PACKAGES += \
@@ -322,10 +318,6 @@ PRODUCT_PACKAGES += \
     OPlusSettingsResCommon \
     OPlusWifiResCommon \
     WifiResTarget
-
-# OnePlus Settings
-PRODUCT_PACKAGES += \
-    OnePlusSettings
 
 # Partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true

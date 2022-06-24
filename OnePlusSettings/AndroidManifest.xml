@@ -17,7 +17,7 @@
 -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           android:sharedUserId="android.uid.system"
-          package="org.nameless.device.OnePlusSettings"
+          package="com.aosp.device.OnePlusSettings"
           android:versionCode="2"
           android:versionName="2.0" >
 
@@ -30,7 +30,7 @@
     <uses-permission android:name="com.qualcomm.permission.USE_QCRIL_MSG_TUNNEL" />
 
     <protected-broadcast android:name="com.android.systemui.doze.pulse" />
-    <protected-broadcast android:name="org.nameless.device.OnePlusSettings.UPDATE_FPS_SETTINGS" />
+    <protected-broadcast android:name="com.aosp.device.OnePlusSettings.UPDATE_FPS_SETTINGS" />
 
     <uses-sdk
         android:minSdkVersion="30"
@@ -47,7 +47,7 @@
 
         <!-- OnePlusSettings Activity -->
         <activity
-            android:name="org.nameless.device.OnePlusSettings.MainSettingsActivity"
+            android:name="com.aosp.device.OnePlusSettings.MainSettingsActivity"
             android:label="@string/device_title"
             android:exported="true">
             <intent-filter>
@@ -64,7 +64,7 @@
         </activity>
 
         <receiver
-            android:name="org.nameless.device.OnePlusSettings.Services.Startup"
+            android:name="com.aosp.device.OnePlusSettings.Services.Startup"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.LOCKED_BOOT_COMPLETED" />
@@ -74,7 +74,7 @@
 
         <!-- DC-Dimming Tile -->
         <service
-            android:name="org.nameless.device.OnePlusSettings.Tiles.DCModeTileService"
+            android:name="com.aosp.device.OnePlusSettings.Tiles.DCModeTileService"
             android:icon="@drawable/ic_dc_mode"
             android:label="@string/dc_mode_title"
             android:permission="android.permission.BIND_QUICK_SETTINGS_TILE"
@@ -87,7 +87,7 @@
 
         <!-- OnePlusSettings Tile -->
         <service
-            android:name="org.nameless.device.OnePlusSettings.Tiles.OnePlusSettingsTileService"
+            android:name="com.aosp.device.OnePlusSettings.Tiles.OnePlusSettingsTileService"
             android:icon="@drawable/ic_settings_device_qs"
             android:label="@string/device_title"
             android:permission="android.permission.BIND_QUICK_SETTINGS_TILE"
@@ -100,7 +100,7 @@
 
         <!-- DozeSettings Activity -->
         <activity
-            android:name="org.nameless.device.OnePlusSettings.Doze.DozeSettingsActivity"
+            android:name="com.aosp.device.OnePlusSettings.Doze.DozeSettingsActivity"
             android:exported="true"
             android:label="@string/ambient_display_title"
             android:launchMode="singleTask">
@@ -111,14 +111,14 @@
         </activity>
 
         <!-- Doze Service -->
-            <service android:name="org.nameless.device.OnePlusSettings.Services.DozeService"
+            <service android:name="com.aosp.device.OnePlusSettings.Services.DozeService"
                 android:permission="OneplusDozeService"
                 android:exported="false">
         </service>
 
         <!-- DozeSettings Tile -->
         <service
-            android:name="org.nameless.device.OnePlusSettings.Tiles.DozeTileService"
+            android:name="com.aosp.device.OnePlusSettings.Tiles.DozeTileService"
             android:icon="@drawable/ic_eye"
             android:label="@string/ambient_display_gestures_title"
             android:permission="android.permission.BIND_QUICK_SETTINGS_TILE"
@@ -130,12 +130,12 @@
         </service>
 
         <!-- FPS Info Service -->
-        <service android:name="org.nameless.device.OnePlusSettings.Services.FPSInfoService"
+        <service android:name="com.aosp.device.OnePlusSettings.Services.FPSInfoService"
             android:exported="false" />
 
         <!-- FPS Tile -->
         <service
-            android:name="org.nameless.device.OnePlusSettings.Tiles.FPSTileService"
+            android:name="com.aosp.device.OnePlusSettings.Tiles.FPSTileService"
             android:icon="@drawable/ic_fps_overlay"
             android:label="@string/fps_info_title"
             android:permission="android.permission.BIND_QUICK_SETTINGS_TILE"
@@ -147,12 +147,12 @@
         </service>
 
         <!-- HBM Service -->
-        <service android:name="org.nameless.device.OnePlusSettings.Services.HBMModeService"
+        <service android:name="com.aosp.device.OnePlusSettings.Services.HBMModeService"
             android:exported="false" />
 
         <!-- HBM Tile -->
         <service
-            android:name="org.nameless.device.OnePlusSettings.Tiles.HBMModeTileService"
+            android:name="com.aosp.device.OnePlusSettings.Tiles.HBMModeTileService"
             android:icon="@drawable/ic_hbm_mode"
             android:label="@string/tile_hbm_mode"
             android:permission="android.permission.BIND_QUICK_SETTINGS_TILE"
@@ -164,18 +164,18 @@
         </service>
 
         <!-- Auto HBM Service -->
-        <service android:name="org.nameless.device.OnePlusSettings.Services.AutoHBMService"
+        <service android:name="com.aosp.device.OnePlusSettings.Services.AutoHBMService"
             android:exported="false" />
 
         <!-- KeyHandler -->
         <service
-            android:name="org.nameless.device.OnePlusSettings.Services.KeyHandler"
+            android:name="com.aosp.device.OnePlusSettings.Services.KeyHandler"
             android:permission="KeyHandlerService"
             android:exported="false" />
 
         <!-- Search Indexing -->
         <provider
-            android:name="org.nameless.device.OnePlusSettings.ConfigPanelSearchIndexablesProvider"
+            android:name="com.aosp.device.OnePlusSettings.ConfigPanelSearchIndexablesProvider"
             android:authorities="org.aosp.device"
             android:multiprocess="false"
             android:grantUriPermissions="true"
